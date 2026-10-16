@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "histo-elm"
+version = "1.0.0"
+description = "Histopathology image classification with frozen CNN/ViT features and Extreme Learning Machines"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Özlem Koç" }, { name = "Ömer Aşkın" }]
+dependencies = [
+    "numpy>=1.26",
+    "scikit-learn>=1.6",
+    "pandas>=2.0",
+    "matplotlib>=3.8",
+    "pillow>=10.0",
+    "joblib>=1.3",
+    "tqdm>=4.66",
+    "torch>=2.1",
+    "timm>=0.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
